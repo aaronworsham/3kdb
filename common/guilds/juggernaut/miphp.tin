@@ -9,7 +9,7 @@
 
 	#list temp add {<dea>Hp:<ffe>$hp/$hp_max <dea>Sp:<ffe>$sp/$sp_max <dea>Stim:<ffe>$gp1/$gp1_max  <dea>Heat:<ffe>$gp2/$gp2_max  <dea>E:<ffe>$ehealth<088>};
 	#list temp add {<dea>H:$my[hp][graph] <dea>S:$my[sp][graph] <dea>Stim:$my[gp1][graph] <dea>Heat:$my[gp2][graph] <dea>E:$enemy[graph]<088>};
-	#list temp add {<eeb>Ammo: <ffe>$ammo <eeb>Snl: <ffe>$snl <eeb>Sm: <ffe>$smd <eeb>Sa: <ffe>$saf <eeb>Sd: <ffe>$sdf <eeb>Jj: <ffe>$jumpjets <eeb>Ll: <ffe>$lowlights <eeb>Ts: <ffe>$truckstim<088>};
+	#list temp add {<eeb>Ammo: <ffe>$ammo[] <eeb>Snl: <ffe>$snl <eeb>Sm: <ffe>$smd <eeb>Sa: <ffe>$saf <eeb>Sd: <ffe>$sdf <eeb>Jj: <ffe>$jumpjets <eeb>Ll: <ffe>$lowlights <eeb>Ts: <ffe>$truckstim<088>};
 	#list temp add {<fff>$gline_vars};
 	#var hpbar[prompt] $temp;
 };
