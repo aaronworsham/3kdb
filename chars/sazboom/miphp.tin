@@ -19,6 +19,7 @@
 		};
 		
 		#list temp add {
+			<eef> [Ammo: <ffe>$ammo[+1]<eef> ]  
 			<dad> [Hits: <ffe>$hits<dad>]  
 			<aaf> [Coffin: <ffe>$corpses[coffin]<aaf>]  
 			<faa> [Nukes: <ffe>$my[nukes]/$my[nukes_max] $reset%<faa>]  
