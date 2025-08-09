@@ -1,0 +1,7 @@
+#class {player_speedruns} {kill}
+#class {player_speedruns} {open}
+
+    #list speedruns add {{{name} {jugg_wvault}   {type} {misc} {vnum} {1076} {desc} {Juggs: Wolf Vault}}};
+    #list speedruns add {{{name} {catacombs}   {type} {misc} {vnum} {7996} {desc} {Catacombs Entrance in Fantasy}}};
+
+#class {player_speedruns} {close}

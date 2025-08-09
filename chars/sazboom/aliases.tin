@@ -1,0 +1,148 @@
+#class {player_aliases} {kill}
+#class {player_aliases} {open}
+
+    #alias {_player_deadmanActions} {
+        .pause;
+    };
+
+	#alias {spwon}
+	{
+		#config speedwalk on;
+	};
+
+	#alias {spwoff}
+	{
+		#config speedwalk off;
+	};
+
+	#alias {spw}
+	{
+		spwon;
+		%1;
+		spwoff;
+	};
+
+	#alias reloadboom {
+		#read chars/sazboom/sazboom.tin;
+		#echo {"File sazboom.tin reloaded"};
+	};
+
+	#alias preplogoff {
+		go jugg_box;
+		getmeep;
+		unkeep all;
+		donate all;
+		go shop;
+		sell all;
+	};
+
+	#alias chatlog {
+
+		tellhist;
+
+		ju -h;
+
+		shouthist;
+	};
+
+	#alias {g2}
+	{
+		go jugg_%1;
+	};
+
+	#alias {getkit}
+	{
+		borrow sword;
+		wield sword;
+		borrow helmet;
+		borrow amulet;
+		borrow armor;
+		borrow greaves;
+		borrow gloves;
+		borrow boots;
+		borrow ring;
+		borrow ring;
+		borrow shield;
+		wear all;
+	}
+
+	#alias {easybotlist}
+	{
+
+		#echo {mahjong};
+		#echo {catacombs};
+		#echo {antcaves};
+		#echo {chicken};
+		#echo {highschool};
+		#echo {chin1};
+		#echo {hippies};
+		#echo {land};
+		#echo {mantis};
+		#echo {sectonz};
+		#echo {serinth-castle-easy};
+		#echo {smurfs};
+		#echo {summerset};
+		#echo {wsea-sewer};
+		#echo {wsea-slum};
+
+	}
+
+	#alias {setexitcolor}
+	{
+		#map color exits <068>
+	}
+
+
+	#alias {3kr}
+	{
+		3kReport;
+	}
+
+
+	#list sazdb clear;
+
+	#NOP -- corpses;
+	#list sazboom3kdb add {{{name} {spw}                    {type} {misc}   {desc} {Speedwalk [X] path}}};
+	#list sazboom3kdb add {{{name} {reloadboom}             {type}  {misc}   {desc} {Re-Read sazboom.tinl}}};
+	#list sazboom3kdb add {{{name} {preplogoff}             {type}  {misc}   {desc} {Prep to logoff by selling and returning stuff}}};
+	#list sazboom3kdb add {{{name} {chatlog}                {type}  {misc}   {desc} {Chatlogs of tell, juggs, & shout}}};
+	#list sazboom3kdb add {{{name} {g2 <Jugg roomname>}     {type}  {misc}   {desc} {Go to a Juggernaught room}}};
+	#list sazboom3kdb add {{{name} {getkit}                 {type}  {misc}   {desc} {Get enough equip to fight}}};
+	#list sazboom3kdb add {{{name} {setpoi}                 {type}  {misc}   {desc} {Sets a poi to the current room}}};
+	#list sazboom3kdb add {{{name} {retpoi}                 {type}  {misc}   {desc} {Return to the current poi}}};
+	#list sazboom3kdb add {{{name} {showpoi}                {type}  {misc}   {desc} {Show info on the current poi}}};
+	#list sazboom3kdb add {{{name} {setexitcolor}           {type}  {misc}   {desc} {Set map exit color}}};
+	#list sazboom3kdb add {{{name} {3kr}           			{type}  {misc}   {desc} {3kReport}}};
+
+	#alias sazdb {
+		#var tempflag 0;
+		#var number &sazboom3kdb[];
+		#echo {<ccf>  -------<088>           <ffa>Sazdb<088>           <ccf>-------<088>  };
+		#echo {<ccf>  -------    <ffa>SAZBOOM ALIASES<088> <fff>($number)<088>  <ccf>-------    <088>  };
+		#echo {    Filters:  <eaf>misc<088>       };
+		#echo {                  <eaf><088>                 };
+		#echo {<ccf>  ----------------------------------------   <088>  };
+		#echo {<ccf>     Name                 Usage              <088>  };
+		#list sazboom3kdb index name;
+		#list sazboom3kdb sort;
+		#foreach $sazboom3kdb[%*] index {
+			#regexp {"%1"} {"$index[type]"} {
+				#var tempflag 1;
+				format_sazboomsaliases {     $index[name]} {$index[desc]};
+			}
+		};
+		#if !$tempflag {
+			#foreach $sazboom3kdb[%*] index {
+				format_sazboomsaliases {     $index[name]} {$index[desc]};
+			};
+		};
+	};
+
+	#alias format_sazboomsaliases {
+		#format {sazboomalias_name} {%-25s} {<cff>%1<088>};
+		#format {sazboomalias_desc} {%-30s} {<deb>%2<088>};
+		#showme $sazboomalias_name $sazboomalias_desc;
+	};
+
+
+#class {player_aliases} {close}

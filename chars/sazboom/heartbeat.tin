@@ -1,0 +1,32 @@
+#class {player_heartbeat} {kill};
+#class {player_heartbeat} {open};
+
+#var corpse_delay 1;
+#var corpse_use 200;
+#var pausedtoregen 1;
+
+#alias {_player_heartbeat} {
+    #if {!$idle_flag} {
+        #if {"$guild" == "juggernaut"} {
+            #if {$hp < $hp_max && $gp1 >= 100} {
+                #echo {<125>-= Auto Enhancing =-};
+                enhance;
+            };
+            #if {$gp2 > 0 && $sp >= $sp_max}{
+                #echo {<125>-= Audo Dissipating =-};
+                dissipate;
+            };
+            #if {$gp1 < 25}{
+                unwrap;
+                deener;
+            };
+
+            #if {$ammo[1] < 100}{
+                #Echo {<125>-=GET MORE MISSILES!!!!!=-};
+            };
+
+        };
+    };
+};
+
+#class {player_heartbeat} {close};

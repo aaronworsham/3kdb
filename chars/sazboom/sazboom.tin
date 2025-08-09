@@ -1,0 +1,21 @@
+#NOP -- Set Player specific variables;
+#var user sazboom;
+#var guild juggernaut;
+#var chars/$user/vars.tin;
+#var theme[name] bright;
+
+
+#NOP -- Load Common files;
+#NOP -- _load_3kdb_common is located in common/config.tin;
+#read common/index.tin;
+
+#NOP -- Load My Files;
+#read chars/$user/miphp.tin;
+#read chars/$user/mappoi.tin;
+#read chars/$user/speedruns.tin;
+
+#NOP -- Load My Bots;
+
+#NOP -- My  Configs;
+setexitcolor;
+

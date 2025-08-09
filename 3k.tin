@@ -4,7 +4,7 @@
 #kill all;
 
 #NOP -- Replace byron below with your character (LOWER CASE).  Extend this to player5, player6, etc. to add more characters beyond 4;
-#var player1 byron;
+#var player1 sazboom;
 #var player2 ;
 #var player3 ;
 #var player4 ;

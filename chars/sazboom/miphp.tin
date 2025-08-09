@@ -1,0 +1,38 @@
+#class {miphp} {kill}
+#class {miphp} {open}
+
+	#var guild_miphp 0;
+	#alias {_player_miphp} {;
+
+
+		#list temp clear;
+		
+		#list temp add {
+			
+			<eeb> E: $enemy[graph] 
+			<eeb> H: $my[hp][graph] 
+			<eeb> STIM: $my[gp1][graph] 
+			<eeb> TSTIM: <ffe>$truckstim 
+			<eeb> HEAT: $my[gp2][graph] 
+			<eeb> S: $my[sp][graph] 
+			<acf> [GXP: <ffe>$my[gxp][current]% <acf>GXPΔ: <ffe>+$my[gxp][change]% ($my[gxp][average]%/rnd)<acf>]
+		};
+		
+		#list temp add {
+			<eef> [Ammo: <ffe>$ammo[1]<eef> ]  
+			<dad> [Hits: <ffe>$hits<dad>]  
+			<aaf> [Coffin: <ffe>$corpses[coffin]<aaf>]  
+			<faa> [Nukes: <ffe>$my[nukes]/$my[nukes_max] $reset%<faa>]  
+			<bfc> [Sup HP: @graph{$shp;100} <bfc>DK: <ffe>$my[clan]/$my[clan_max] $reset% <bfc>XP: <ffe>$snl% <bfc>SupMD: <ffe>$smd <bfc>DF: <ffe>$sdf<bfc>]  
+		};
+
+		#var hpbar[prompt] $temp;
+		
+	};
+
+
+	#action {^HP} {#line GAG};
+	#action {^A:} {#line GAG};
+		
+
+#class {miphp} {close}

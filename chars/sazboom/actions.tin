@@ -1,0 +1,75 @@
+#class {player_actions} {kill}
+#class {player_actions} {open}
+
+	#ACTION {The computer chirps 'All systems nominal'}
+	{
+		jump;
+		crumble all;
+		#delay {4} 
+		{
+			go morgue;
+			acquire coffin;
+			go rocks;
+			buy moon rocks;
+			go jugg_box;
+			calltruck;
+			getkit;
+			keep all;
+			setexitcolor;
+			strategy frenzy;
+			eq;
+		};
+
+	};
+
+	#ACTION {You attack }
+	{
+		eval $enemy[name];
+		consider $enemy[name];
+	};
+
+	#ACTION {You are already attacking that.}
+	{
+		eval $enemy[name];
+		consider $enemy[name];
+	}
+
+	#ACTION {You switch targets!}
+	{
+		eval $enemy[name];
+		consider $enemy[name];
+	}
+
+	#ACTION {attacking you!}
+	{
+		eval $enemy[name];
+		consider $enemy[name];
+	}
+
+	#ACTION {Primary Damage type : [EDGED]}
+	{
+		#echo {<125>-= SUPPORT DEFEND:EDGED =-};
+		#delay {1} {support defend edged;}
+	}
+
+	#ACTION {Primary Damage type : [BLUNT]}
+	{
+		#echo {<125>-= SUPPORT DEFEND:BLUNT =-};
+		#delay {1} {support defend blunt;}
+	}
+
+	#ACTION {Primary Damage type : [HEAT]}
+	{
+		#echo {<125>-= SUPPORT DEFEND:FIRE =-};
+		#delay {1} {support defend fire;}
+	}
+
+	#ACTION {Sazboom dealt the killing blow}
+	{
+		give all to meep;
+	}
+
+
+
+
+#class {player_actions} {close}

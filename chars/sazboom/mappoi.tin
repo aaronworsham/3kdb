@@ -1,0 +1,29 @@
+#class {map_poi} {kill};
+#class {map_poi} {open};
+   
+    #var poi;
+
+    #alias {setpoi}
+    {
+        #map get roomvnum poi[roomvnum];
+        #map get roomarea poi[roomarea];
+        #map get roomname poi[roomname];
+        #echo {Setting POI to VNUM: $poi[roomvnum] NAME: $poi[roomname] in AREA: $poi[roomarea]};
+        
+    }
+
+
+    #alias {retpoi}
+    {
+    
+        #echo {Returning to POI VNUM: $poi[roomvnum] NAME: $poi[roomname] in AREA: $poi[roomarea]};
+        #map run $poi[roomvnum];
+    }
+
+    #alias {showpoi}
+    {
+        #echo {POI set to VNUM: $poi[roomvnum] NAME: $poi[roomname] in AREA: $poi[roomarea]};
+
+    }
+
+#class {map_poi} {close};
