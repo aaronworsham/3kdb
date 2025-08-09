@@ -19,10 +19,7 @@
 		};
 		
 		#list temp add {
-			<eef> [Ammo: <ffe>$ammo[1]<eef> ]  
-			<dad> [Hits: <ffe>$hits<dad>]  
-			<aaf> [Coffin: <ffe>$corpses[coffin]<aaf>]  
-			<faa> [Nukes: <ffe>$my[nukes]/$my[nukes_max] $reset%<faa>]  
+			<eef> [Ammo: <ffe>$ammo[+1]<eef> ]  
 			<bfc> [Sup HP: @graph{$shp;100} <bfc>DK: <ffe>$my[clan]/$my[clan_max] $reset% <bfc>XP: <ffe>$snl% <bfc>SupMD: <ffe>$smd <bfc>DF: <ffe>$sdf<bfc>]  
 		};
 
