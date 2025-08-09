@@ -33,7 +33,7 @@
 	#var {ammo[3]}	{%4};
 	#var {ammo[4]}	{%5};
 	#var {ammo[5]}	{%6};
-	#format {ammo} {%d} {$ammo};
+	#NOP {#format {ammo} {%d} {$ammo}; I believe this line is breaking ammo var.}
 	#var {shp}	{%7};
 	#var {snl}	{%8};
 	#regex {%9} {De} {#var smd Defend};
